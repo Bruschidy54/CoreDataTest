@@ -8,21 +8,29 @@
 
 import UIKit
 
-class CompaniesController: UITableViewController {
+class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
+    func didAddCompany(company: Company) {
+        companies.append(company)
+        
+        let newIndexPath = IndexPath(row: companies.count - 1, section: 0)
+        tableView.insertRows(at: [newIndexPath], with: .automatic)
+    }
+    
     
     let cellId = "cellId"
-    let companies = [
+    var companies = [
         Company(name: "Apple", founded: Date()),
         Company(name: "Google", founded: Date()),
          Company(name: "Facebook", founded: Date())
     ]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "TEST ADD", style: .plain, target: self, action: #selector(addCompany))
        
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         
         navigationItem.title = "Companies"
         
@@ -37,8 +45,9 @@ class CompaniesController: UITableViewController {
     }
     
     @objc func handleAddCompany() {
-        let createCompanyController = UIViewController()
-        createCompanyController.view.backgroundColor = .green
+        let createCompanyController = CreateCompanyController()
+        createCompanyController.delegate = self
+        
         
         let navController = CustomNavigationController(rootViewController: createCompanyController)
         

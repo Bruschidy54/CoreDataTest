@@ -18,6 +18,7 @@
 		CD61B13C2069BEFA000FA07B /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61B13B2069BEFA000FA07B /* UIColor+theme.swift */; };
 		CD61B13E206B3E5D000FA07B /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61B13D206B3E5D000FA07B /* Company.swift */; };
 		CD61B140206B41C7000FA07B /* CreateCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61B13F206B41C7000FA07B /* CreateCompanyController.swift */; };
+		CDB3C809207FE84F00CD6455 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C808207FE84F00CD6455 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CD61B13B2069BEFA000FA07B /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 		CD61B13D206B3E5D000FA07B /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		CD61B13F206B41C7000FA07B /* CreateCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyController.swift; sourceTree = "<group>"; };
+		CDB3C808207FE84F00CD6455 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		CD61B10A20645C14000FA07B /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
+				CDB3C807207FE84000CD6455 /* Utils */,
 				CD61B10B20645C14000FA07B /* AppDelegate.swift */,
 				CD61B10D20645C14000FA07B /* CompaniesController.swift */,
 				CD61B13D206B3E5D000FA07B /* Company.swift */,
@@ -135,6 +138,14 @@
 				CD61B12D20645C14000FA07B /* Info.plist */,
 			);
 			path = CoreDataTestUITests;
+			sourceTree = "<group>";
+		};
+		CDB3C807207FE84000CD6455 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CDB3C808207FE84F00CD6455 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				CD61B13E206B3E5D000FA07B /* Company.swift in Sources */,
 				CD61B10C20645C14000FA07B /* AppDelegate.swift in Sources */,
 				CD61B140206B41C7000FA07B /* CreateCompanyController.swift in Sources */,
+				CDB3C809207FE84F00CD6455 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
