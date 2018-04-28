@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
     func didAddCompany(company: Company) {
@@ -18,17 +19,13 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
     
     
     let cellId = "cellId"
-    var companies = [
-        Company(name: "Apple", founded: Date()),
-        Company(name: "Google", founded: Date()),
-         Company(name: "Facebook", founded: Date())
-    ]
+    var companies = [Company]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "TEST ADD", style: .plain, target: self, action: #selector(addCompany))
+        fetchCompanies()
        
         view.backgroundColor = .white
         
@@ -42,6 +39,49 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Plus").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAddCompany))
         
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
+            let company = self.companies[indexPath.row]
+            
+            self.companies.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            let context = CoreDataManager.shared.persistentContainer.viewContext
+            
+            context.delete(company)
+            do {
+            try context.save()
+            } catch let saveErr {
+                print("Failed to save company deletion:", saveErr)
+            }
+        }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (_, indexPath) in
+            print("editing company")
+        }
+        
+        return [deleteAction, editAction]
+    }
+    
+    private func fetchCompanies() {
+
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
+        
+        do {
+        let companies = try context.fetch(fetchRequest)
+            companies.forEach { (company) in
+                print(company)
+            }
+            
+            self.companies = companies
+            self.tableView.reloadData()
+        } catch let fetchErr {
+            print("Failed to fetch companies", fetchErr)
+        }
     }
     
     @objc func handleAddCompany() {
