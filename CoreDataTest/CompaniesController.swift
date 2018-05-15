@@ -10,6 +10,13 @@ import UIKit
 import CoreData
 
 class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
+    func didEditCompany(company: Company) {
+        
+        let row = companies.index(of: company)
+        let reloadIndexPath = IndexPath(row: row!, section: 0)
+        tableView.reloadRows(at: [reloadIndexPath], with: .middle)
+    }
+    
     func didAddCompany(company: Company) {
         companies.append(company)
         
@@ -57,12 +64,24 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
                 print("Failed to save company deletion:", saveErr)
             }
         }
+        deleteAction.backgroundColor = UIColor.lightRed
         
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (_, indexPath) in
-            print("editing company")
-        }
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editHandleFunction)
+        editAction.backgroundColor = UIColor.darkBlue
         
         return [deleteAction, editAction]
+    }
+    
+    
+    
+    private func editHandleFunction(action: UITableViewRowAction, indexPath: IndexPath) {
+        print("Editing company in separate function")
+        
+        let editCompanyController = CreateCompanyController()
+        editCompanyController.delegate = self
+        editCompanyController.company = companies[indexPath.row]
+        let navController = CustomNavigationController(rootViewController: editCompanyController)
+        present(navController, animated: true, completion: nil)
     }
     
     private func fetchCompanies() {
@@ -116,9 +135,27 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         
         let company = companies[indexPath.row]
         
-        cell.textLabel?.text = company.name
+        if let name = company.name, let founded = company.founded {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd, yyyy"
+            
+            let foundedDateString = dateFormatter.string(from: founded)
+            
+            let dateString = "\(name) - Founded: \(foundedDateString)"
+            
+            cell.textLabel?.text = dateString
+        } else {
+            cell.textLabel?.text = company.name
+        }
+        
         cell.textLabel?.textColor = .white
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        cell.imageView?.image = #imageLiteral(resourceName: "select_photo_empty")
+        
+        if let imageData = company.imageData {
+            cell.imageView?.image = UIImage(data: imageData)
+        }
         
         return cell
     }
