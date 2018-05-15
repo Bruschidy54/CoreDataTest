@@ -18,6 +18,7 @@
 		CD61B13C2069BEFA000FA07B /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61B13B2069BEFA000FA07B /* UIColor+theme.swift */; };
 		CD61B13E206B3E5D000FA07B /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61B13D206B3E5D000FA07B /* Company.swift */; };
 		CD61B140206B41C7000FA07B /* CreateCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61B13F206B41C7000FA07B /* CreateCompanyController.swift */; };
+		CD6EA3D820AB9B18007EC6BF /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6EA3D720AB9B18007EC6BF /* CompanyCell.swift */; };
 		CD7AB6B52093EA9B00E81394 /* TestDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD7AB6B32093EA9B00E81394 /* TestDataModels.xcdatamodeld */; };
 		CD7AB6B72093F3F700E81394 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7AB6B62093F3F700E81394 /* CoreDataManager.swift */; };
 		CDB3C809207FE84F00CD6455 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C808207FE84F00CD6455 /* Extensions.swift */; };
@@ -58,6 +59,7 @@
 		CD61B13B2069BEFA000FA07B /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 		CD61B13D206B3E5D000FA07B /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		CD61B13F206B41C7000FA07B /* CreateCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyController.swift; sourceTree = "<group>"; };
+		CD6EA3D720AB9B18007EC6BF /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		CD7AB6B42093EA9B00E81394 /* TestDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CD7AB6B62093F3F700E81394 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CDB3C808207FE84F00CD6455 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -111,9 +113,9 @@
 		CD61B10A20645C14000FA07B /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
+				CD6EA3D920AB9C22007EC6BF /* Companies */,
 				CDB3C807207FE84000CD6455 /* Utils */,
 				CD61B10B20645C14000FA07B /* AppDelegate.swift */,
-				CD61B10D20645C14000FA07B /* CompaniesController.swift */,
 				CD61B13D206B3E5D000FA07B /* Company.swift */,
 				CD61B10F20645C14000FA07B /* Main.storyboard */,
 				CD61B11220645C14000FA07B /* Assets.xcassets */,
@@ -144,6 +146,15 @@
 				CD61B12D20645C14000FA07B /* Info.plist */,
 			);
 			path = CoreDataTestUITests;
+			sourceTree = "<group>";
+		};
+		CD6EA3D920AB9C22007EC6BF /* Companies */ = {
+			isa = PBXGroup;
+			children = (
+				CD61B10D20645C14000FA07B /* CompaniesController.swift */,
+				CD6EA3D720AB9B18007EC6BF /* CompanyCell.swift */,
+			);
+			path = Companies;
 			sourceTree = "<group>";
 		};
 		CDB3C807207FE84000CD6455 /* Utils */ = {
@@ -217,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Dylan Bruschi";
 				TargetAttributes = {
 					CD61B10720645C14000FA07B = {
@@ -293,6 +304,7 @@
 				CD61B10E20645C14000FA07B /* CompaniesController.swift in Sources */,
 				CD61B13E206B3E5D000FA07B /* Company.swift in Sources */,
 				CD61B10C20645C14000FA07B /* AppDelegate.swift in Sources */,
+				CD6EA3D820AB9B18007EC6BF /* CompanyCell.swift in Sources */,
 				CD7AB6B52093EA9B00E81394 /* TestDataModels.xcdatamodeld in Sources */,
 				CD7AB6B72093F3F700E81394 /* CoreDataManager.swift in Sources */,
 				CD61B140206B41C7000FA07B /* CreateCompanyController.swift in Sources */,
@@ -365,6 +377,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -372,6 +385,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -422,6 +436,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -429,6 +444,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
