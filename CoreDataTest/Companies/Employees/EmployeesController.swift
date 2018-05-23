@@ -111,8 +111,9 @@ class EmployeesController: UITableViewController, CreateEmployeeControllerDelega
         
         // TO DO: see why birthday is not displaying
         if let birthday = employee.employeeInformation?.birthday {
+            //Display brithday properly?
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM dd, yyyy"
+            dateFormatter.dateFormat = "MMM dd, yyyy"
             cell.textLabel?.text = "\(employee.name ?? "")    \(dateFormatter.string(from: birthday))"
         }
         cell.backgroundColor = UIColor.tealColor

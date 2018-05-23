@@ -24,6 +24,8 @@
 		CDB3C809207FE84F00CD6455 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C808207FE84F00CD6455 /* Extensions.swift */; };
 		CDE0D66620B4B2ED00CE3814 /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE0D66520B4B2ED00CE3814 /* IndentedLabel.swift */; };
 		CDE0D66820B4BBE000CE3814 /* EmployeeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE0D66720B4BBE000CE3814 /* EmployeeType.swift */; };
+		CDE0D66A20B604C000CE3814 /* CompaniesAutoUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE0D66920B604C000CE3814 /* CompaniesAutoUpdateController.swift */; };
+		CDE0D66C20B6119B00CE3814 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE0D66B20B6119A00CE3814 /* APIService.swift */; };
 		CDF4D5CD20B24F2C0085F46D /* CompaniesController+CreateCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4D5CC20B24F2C0085F46D /* CompaniesController+CreateCompany.swift */; };
 		CDF4D5CF20B250640085F46D /* CompaniesController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4D5CE20B250640085F46D /* CompaniesController+UITableView.swift */; };
 		CDF4D5D120B31A870085F46D /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4D5D020B31A870085F46D /* EmployeesController.swift */; };
@@ -72,6 +74,8 @@
 		CDB3C808207FE84F00CD6455 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CDE0D66520B4B2ED00CE3814 /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
 		CDE0D66720B4BBE000CE3814 /* EmployeeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeType.swift; sourceTree = "<group>"; };
+		CDE0D66920B604C000CE3814 /* CompaniesAutoUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesAutoUpdateController.swift; sourceTree = "<group>"; };
+		CDE0D66B20B6119A00CE3814 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		CDF4D5CC20B24F2C0085F46D /* CompaniesController+CreateCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+CreateCompany.swift"; sourceTree = "<group>"; };
 		CDF4D5CE20B250640085F46D /* CompaniesController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+UITableView.swift"; sourceTree = "<group>"; };
 		CDF4D5D020B31A870085F46D /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				CD61B11720645C14000FA07B /* Info.plist */,
 				CD7AB6B32093EA9B00E81394 /* TestDataModels.xcdatamodeld */,
 				CD7AB6B62093F3F700E81394 /* CoreDataManager.swift */,
+				CDE0D66920B604C000CE3814 /* CompaniesAutoUpdateController.swift */,
+				CDE0D66B20B6119A00CE3814 /* APIService.swift */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -329,10 +335,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD61B13A2069B6F6000FA07B /* CustomNavigationController.swift in Sources */,
+				CDE0D66C20B6119B00CE3814 /* APIService.swift in Sources */,
 				CDE0D66820B4BBE000CE3814 /* EmployeeType.swift in Sources */,
 				CD61B13C2069BEFA000FA07B /* UIColor+theme.swift in Sources */,
 				CD61B10E20645C14000FA07B /* CompaniesController.swift in Sources */,
 				CDF4D5CF20B250640085F46D /* CompaniesController+UITableView.swift in Sources */,
+				CDE0D66A20B604C000CE3814 /* CompaniesAutoUpdateController.swift in Sources */,
 				CDF4D5D120B31A870085F46D /* EmployeesController.swift in Sources */,
 				CD61B13E206B3E5D000FA07B /* Company.swift in Sources */,
 				CDF4D5D320B328B10085F46D /* UIViewController+Helpers.swift in Sources */,
